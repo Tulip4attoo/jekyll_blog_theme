@@ -5,21 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/assets/css/w3.css">
 <link href="/assets/css/font_family_css.css" rel="stylesheet">
-<script type="text/javascript" src="/assets/js/main.js" charset="UTF-8"></script><style>
+<link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
+
+<script type="text/javascript" src="/assets/js/main.js" charset="UTF-8"></script>
+<style>
+#header {
+  background-color: #ffffff;
+  padding: 10px 10px;
+  color: #009900;
+  text-align: center;
+  font-size: 90px; 
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 0.2s;
+  text-decoration:none;
+  font-family: "Alegreya", serif;
+}
+
+#text-header {
+  color: #009900;
+  font-size: 30px; 
+  font-family: "Alegreya", serif;
+}
+
+#text-header-small {
+  color: #009900;
+  font-size: 20px; 
+  font-family: "Alegreya", serif;
+}
+
+#text {
+  font-family: "Noto Serif";
+}
+
 </style>
 <body class="w3-light-grey">
 
+  <!-- Header -->
+<a href="/"><div id="header">{{site.name}}</div></a>
+
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+<div class="w3-content" style="max-width:1200px; margin-top:200px;">
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <a href="/" style="text-decoration:none">  
-    <h1><b style="color:#009900;font-size:40px;">{{site.name}}</b></h1>
-    <p>{{site.description}}</p>
-  </a>
-</header>
 
 <!-- Grid -->
 <div class="w3-row">
@@ -47,7 +78,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   <a href="/about" style="text-decoration:none">
   <img src="/assets/img/avatar.jpg" style="width:100%">
     <div class="w3-container w3-white">
-      <h4><b style="color:#009900;font-size:30px;">About me</b></h4></a>
+      <h4 id="text-header"><b>About me</b></h4></a>
       <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
     </div>
   </div><hr>
@@ -120,4 +151,20 @@ and is wrapped around the whole page content, except for the footer in this exam
 </footer>
   
 </body>
+
+<script>
+  // When the user scrolls down 50px from the top of the document, resize the header's font size
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("header").style.fontSize = "30px";
+      document.getElementById("header").style.textAlign = "left";
+    } else {
+      document.getElementById("header").style.fontSize = "90px";
+      document.getElementById("header").style.textAlign = "center";
+    }
+  }
+</script>
+  
 </html>
