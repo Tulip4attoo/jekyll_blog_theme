@@ -33,7 +33,7 @@ post_class: post-template
                 {% endif %}
                 
                 <!-- Post Title -->
-				<h1 class="posttitle" style="color:#009900;"><b>{{ page.title }}</b></h1> 
+				<h1 id="post-title"><b>{{ page.title }}</b></h1> 
                 
 			</div>
 
@@ -53,7 +53,7 @@ post_class: post-template
             
 
 			<!-- Post Content -->
-			<div class="article-pos">
+			<div class="article-pos" id="text">
                 <!-- Toc if any -->            
                 {% if page.toc %}
                     {% if page.beforetoc %}
