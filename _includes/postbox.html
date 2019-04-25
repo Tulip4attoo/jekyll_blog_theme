@@ -1,3 +1,5 @@
+<link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+
 <!-- begin post -->
 {% assign author = site.authors[post.author] %}
 
@@ -10,11 +12,11 @@
   {% endif %}
   <!-- <img src="/w3images/woods.jpg" alt="Nature" > -->
   <div class="w3-container">
-    <a href="{{ post.url | absolute_url }}" style="color:#009900; text-decoration:none; font-size:30px"><h3><b>{{ post.title }}</b></h3></a>
+  <a href="{{ post.url | absolute_url }}" style="text-decoration:none;"><h3 id="text-header"><b>{{ post.title }}</b></h3></a>
   </div>
     
 
-  <div class="w3-container">
+  <div class="w3-container" id="text">
     {{ post.description | strip_html | truncatewords:100 }}
     <div class="w3-row">
       <a href="{{ post.url | absolute_url }}">
