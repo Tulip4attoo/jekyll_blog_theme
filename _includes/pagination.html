@@ -1,0 +1,30 @@
+<div align="center" style="position: relative;">
+{% if paginator.total_pages > 1 %}
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+      <button class="w3-button w3-black w3-padding-large w3-margin-bottom">&laquo; Prev</button></a>
+  {% else %}
+    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">&laquo; Prev</button></a>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span class="ml-1 mr-1">
+        <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">{{ page }}</button></span>
+    {% elsif page == 1 %}
+      <a  class="ml-1 mr-1" href="{{ site.page_1 | replace: '//', '/' }}">
+        <button class="w3-button w3-black w3-padding-large w3-margin-bottom">{{ page }}</button></a>
+    {% else %}
+      <a  class="ml-1 mr-1" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
+        <button class="w3-button w3-black w3-padding-large w3-margin-bottom">{{ page }}</button></a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+      <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next &raquo;</button></a>
+  {% else %}
+    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Next &raquo;</button></a>
+  {% endif %}
+{% endif %}
+</div>

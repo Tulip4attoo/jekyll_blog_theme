@@ -1,0 +1,42 @@
+<!-- begin post -->
+{% assign author = site.authors[post.author] %}
+
+
+<div class="w3-card-4 w3-margin w3-white">
+  {% if post.img %} 
+    <a href="{{ post.url | absolute_url }}">
+      <img src="{% if post.img contains "://" %}{{ post.img }}{% else %}{{ post.img | absolute_url }}{% endif %}" alt="{{ post.title }}" style="width:100%"> 
+    </a>
+  {% endif %}
+  <!-- <img src="/w3images/woods.jpg" alt="Nature" > -->
+  <div class="w3-container">
+    <a href="{{ post.url | absolute_url }}" style="color:#009900; text-decoration:none; font-size:30px"><h3><b>{{ post.title }}</b></h3></a>
+  </div>
+    
+
+  <div class="w3-container">
+    {{ post.description | strip_html | truncatewords:100 }}
+    <div class="w3-row">
+      <a href="{{ post.url | absolute_url }}">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+      </a>
+
+      <div class="w3-col m4 w3-hide-small">
+        <p><span class="w3-padding-large w3-right">
+          {% if post.author %}
+          <span class="meta-footer-thumb">
+          <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}" style="width:30px">
+          </span>                
+          <span class="author-meta">
+          <span class="post-name"><a target="_blank" href="{{ author.web }}"></a>{{ author.display_name }},</span>
+          </span>
+          {% endif %}
+          <span class="w3-opacity">{{ post.date | date_to_string }}</span></span></p>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+# Site
+name: "Tulip's blog"
+title: "Tulip's blog"
+description: "Gamer, Reader, Dreamer, AI Engineer, Gamedev"
+logo: 'assets/img/logo.png'
+favicon: 'assets/img/logo.png'
+baseurl: 
+include: ["_pages"]
+permalink: /:title/
+
+# Authors
+authors:
+  Tulip:
+    name: Tulip
+    display_name: Tulip
+    gravatar: b44180fbc23943ee9c2a304d941c6ca8
+    email: huylinh.nguyen@outlook.com
+    web: https://tulip4attoo.github.io/
+    facebook: https://www.facebook.com/huylinh.nguyen
+    description: "Gamer, Reader, Dreamer, AI Engineer, Gamedev."
+
+# Plugins
+plugins: 
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 5
+paginate_path: /page:num/
+page_1: /
+
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  # syntax_highlighter: rouge
+  syntax_highlighter: darkly
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "enabled"
