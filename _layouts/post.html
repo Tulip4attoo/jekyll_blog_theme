@@ -16,7 +16,7 @@ post_class: post-template
 		<!-- Post -->        
         {% assign author = site.authors[page.author] %}
         
-		<div class="col-md-9 flex-first flex-md-unordered">
+		<div class="col-md-9 flex-first flex-md-unordered" style="margin-left:30px; margin-right:30px; text-align:justify;">
 			<div class="mainheading">
 
                 <!-- Author Box -->
@@ -33,15 +33,10 @@ post_class: post-template
                 {% endif %}
                 
                 <!-- Post Title -->
-				<h1 class="posttitle">{{ page.title }}</h1> 
+				<h1 class="posttitle" style="color:#009900;"><b>{{ page.title }}</b></h1> 
                 
 			</div>
 
-            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
-            {% if site.adsense == "enabled" %}
-                {% include adsense-under-header.html %}
-            {% endif %}
-            <!-- End Adsense -->
 
 			<!-- Post Featured Image -->
             {% if page.img %}
@@ -58,7 +53,7 @@ post_class: post-template
             
 
 			<!-- Post Content -->
-			<div class="article-post">
+			<div class="article-pos">
                 <!-- Toc if any -->            
                 {% if page.toc %}
                     {% if page.beforetoc %}
@@ -72,14 +67,7 @@ post_class: post-template
                 <!-- End Toc -->
 				{{content}}
 			</div>
-            
-            <!-- Rating -->
-            {% if page.rating %}
-            <div class="rating mb-4 d-flex align-items-center">
-                <strong class="mr-1">Rating:</strong> {% include star_rating.html %}
-            </div>
-            {% endif %}
-            
+                        
             <!-- Post Date -->
             <p>
             <small>
@@ -155,33 +143,3 @@ post_class: post-template
 </div>
 <!-- End Article
 ================================================== -->
-
-  
-
-
-
-<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
-https://search.google.com/structured-data/testing-tool/u/0/
-================================================== -->
-{% if page.rating %}
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Thing",
-    "name": "{{ page.title }}"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "{{ author.display_name }}"
-  },
-  "datePublished": "{{ page.date | date:"%Y-%m-%d" }}",
-  "reviewRating": {
-    "@type": "Rating",   
-    "ratingValue": "{{ page.rating }}",
-    "bestRating": "5"
-  }
-}
-</script>
-{% endif %}
