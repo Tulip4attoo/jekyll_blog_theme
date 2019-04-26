@@ -135,7 +135,7 @@ Theme này (và rất nhiều theme khác) không hỗ trợ gõ công thức to
 + thêm đoạn này vào file `post.html`
 
 ```
-{% include mathjax.html %}
+{% raw %}{% include mathjax.html %}{% endraw %}
 ```
 
 # To do
