@@ -7,12 +7,6 @@ post_class: post-template
 <div class="container">
 	<div class="row">
 
-		<!-- Post Share -->
-		<div class="col-md-2 pl-0">            
-           {% include share.html %}  
-		</div>
-		
-
 		<!-- Post -->        
         {% assign author = site.authors[page.author] %}
         
@@ -20,7 +14,7 @@ post_class: post-template
 			<div class="mainheading">
 
                 <!-- Author Box -->
-                {% if page.author %}				
+<!--  {% if page.author %}				
 				<div class="row post-top-meta">
 					<div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
 						<img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
@@ -30,8 +24,8 @@ post_class: post-template
 						<span class="author-description">{{ author.description }}</span>						
 					</div>
 				</div>				
-                {% endif %}
-                
+      {% endif %}
+ -->                
                 <!-- Post Title -->
 				<h1 id="post-title"><b>{{ page.title }}</b></h1> 
                 
@@ -105,7 +99,7 @@ post_class: post-template
 			<!-- End Tags -->
             
             <!-- Prev/Next -->
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+<!--             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             {% if page.previous.url %}
             <a class="prev d-block col-md-6" href="{{page.previous.url | absolute_url}}"> &laquo; {{page.previous.title}}</a>
             {% endif %}
@@ -114,7 +108,27 @@ post_class: post-template
             {% endif %}
             <div class="clearfix"></div>
             </div>
-            <!-- End Categories -->
+ -->            <!-- End Categories -->
+
+      <!-- POST NAVIGATION -->
+      <div class="postNav clearfix">
+        {% if page.previous.url %} 
+          <a class="prev{% if page.previous.img %} image{% endif %}" href="{{ page.previous.url | prepend: site.baseurl }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
+          {% if page.previous.img %} 
+            <img src="{{ '../assets/img/' | prepend: site.baseurl | append: page.previous.img }}" alt="">
+          {% endif %}
+        </a>
+        {% endif %}  
+        {% if page.next.url %}  
+          <a class="next{% if page.next.img %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
+          {% if page.next.img %} 
+            <img src="../{{ page.next.img }}" alt="">
+          {% endif %} 
+          </a>
+        {% endif %} 
+      </div>
+
+
             <div id="disqus_thread"></div>
             <script>
                 /**
