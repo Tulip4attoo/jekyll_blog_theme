@@ -15,7 +15,7 @@
   padding: 10px 10px;
   color: white;
   text-align: center;
-  font-size: 90px; 
+  font-size: 70px; 
   font-weight: bold;
   position: fixed;
   top: 0;
@@ -23,6 +23,7 @@
   transition: 0.2s;
   text-decoration:none;
   font-family: "Alegreya", serif;
+  z-index: 999;
 }
 
 #text-header {
@@ -52,11 +53,13 @@
 <body class="w3-light-grey">
 
   <!-- Header -->
-<a href="/"><div id="header">{{site.name}}</div></a>
+<a href="/"><div id="header">
+<div class="w3-content" style="max-width:1200px;">{{site.name}}</div>
+</div></a>
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1200px; margin-top:200px;">
+<div class="w3-content" style="max-width:1200px; margin-top:160px;">
 
 
 <!-- Grid -->
@@ -102,28 +105,6 @@ and is wrapped around the whole page content, except for the footer in this exam
         {% endif %}
       {% endfor %}
     </ul>
-    <!-- <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul> -->
   </div>
   <hr> 
  
@@ -168,7 +149,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       document.getElementById("header").style.fontSize = "30px";
       document.getElementById("header").style.textAlign = "left";
     } else {
-      document.getElementById("header").style.fontSize = "90px";
+      document.getElementById("header").style.fontSize = "70px";
       document.getElementById("header").style.textAlign = "center";
     }
   }
