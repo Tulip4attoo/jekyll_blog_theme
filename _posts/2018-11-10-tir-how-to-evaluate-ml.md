@@ -5,7 +5,8 @@ date:           2018-11-15
 mathjax:        true
 comments:       true
 description:    Tóm tắt lại bài talk How Should We Evaluate Machine Learning for AI? (https://www.youtube.com/watch?v=7CcSm0PAr-Y)
-img:            tir/adversarial_attack.jpeg
+img:            assets/img/tir/adversarial_attack.jpeg
+author:         Tulip
 ---
 
 Hiện tại, xu thế chủ đạo của việc evaluate 1 model ML thường vẫn dựa trên các chỉ số accuracy, F1, hoặc đa dạng hơn xíu thì là ROC, MAP,... nhìn chung thì ta sẽ không thực sự chú trọng (và chưa chú trọng được thì đúng hơn) về việc model có thể gặp các sai lầm ba chấm hay không. Like this:

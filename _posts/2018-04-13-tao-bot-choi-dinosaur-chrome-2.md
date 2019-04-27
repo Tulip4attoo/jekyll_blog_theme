@@ -5,7 +5,8 @@ date:           2018-04-13
 mathjax:        true
 comments:       true
 description:    Bài viết thứ 2 trong series tạo bot chơi game T-Rex của Chrome. Trong bài viết này, mình sẽ giới thiệu về Genetic Algorithms, thuật toán sẽ được sử dụng để implement làm bot tự học cách chơi trò T-Rex này.
-img:            chrome-trex/es_bear.jpeg
+img:            assets/img/chrome-trex/es_bear.jpeg
+author:         Tulip
 ---
 
 Lưu ý: mình viết bài với góc nhìn của 1 người tìm hiểu về GA được khoảng 3 ngày, để làm 1 small project (là project này), vì vậy mình nghĩ có nhiều điều mình viết ra có thể bị thiếu sót. Các bạn nếu muốn thực sự tìm hiểu sâu về GA hãy đọc phần các nguồn tham khảo phía dưới.
@@ -15,7 +16,7 @@ Lưu ý: mình viết bài với góc nhìn của 1 người tìm hiểu về GA
 Tự nhiên là 1 bậc thầy kỳ diệu với những thiết kế mà con người vẫn chưa thể hiểu và nắm bắt được. Rất nhiều thuật toán trong AI được truyền cảm hứng từ sinh học, và [Genetic Algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) (từ giờ mình sẽ viết tắt là GA) là 1 trong số đó. GA là 1 [Metaheuristic](https://en.wikipedia.org/wiki/Metaheuristic) thuộc nhánh [evolutionary algorithms (EA)](https://en.wikipedia.org/wiki/Evolutionary_algorithm). 
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/chrome-trex/es_bear.jpeg"><br>
+  <img src="../assets/img/chrome-trex/es_bear.jpeg"><br>
   <i>Phát triển hoặc bị đào thải</i>
 </p>
 
@@ -25,7 +26,7 @@ Tự nhiên là 1 bậc thầy kỳ diệu với những thiết kế mà con ng
 # Mô tả thuật toán
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/chrome-trex/GA_flow.jpg"><br>
+  <img src="../assets/img/chrome-trex/GA_flow.jpg"><br>
   <i>Flow của GA</i>
 </p>
 

@@ -6,6 +6,7 @@ mathjax:        true
 comments:       true
 description:    Cách tạo ra ảnh gif đơn giản cho python, từ package matplotlib.
 img:            assets/img/make-gif/linear_regression_fitting.gif
+author:         Tulip
 ---
 
 # Problem
@@ -80,7 +81,7 @@ imageio.mimsave('./linear_regression_fitting.gif', image_list, fps=1.5)
 Tada, và sản phẩm của chúng ta là: 
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/make-gif/linear_regression_fitting.gif"><br>
+  <img src="../assets/img/make-gif/linear_regression_fitting.gif"><br>
   <i>Sử dụng gradient để fit linear regression</i>
 </p>
 

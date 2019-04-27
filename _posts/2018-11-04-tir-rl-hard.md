@@ -5,7 +5,8 @@ date:           2018-11-04
 mathjax:        true
 comments:       true
 description:    Tóm tắt lại bài viết Deep Reinforcement Learning Doesn't Work Yet (https://www.alexirpan.com/2018/02/14/rl-hard.html)
-img:            tir/rl-hard.jpg
+img:            assets/img/tir/rl-hard.jpg
+author:         Tulip
 ---
 
 Hợ hợ tuần rồi chưa viết được bài nào. Bài này là viết bù cho tuần trước đây. Tuy nhiên bài này quá dài nên coi như 2 bài cũng ok :))
@@ -19,7 +20,7 @@ Dưới đây là nội dung bài viết qua ý hiểu của mình.
 Tác giả nói rằng, phần lớn những vấn đề bạn gặp hiện nay, RL không giải quyết được. 
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/tir/rl-hard.jpg"><br>
+  <img src="../assets/img/tir/rl-hard.jpg"><br>
   <i>Khẳng định của tác giả
 </i>
 </p>
@@ -29,7 +30,7 @@ Cụ thể hơn, các mục dưới đây nói về những TH thất bại củ
 ## Quá không hiệu quả
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/tir/rainbow_dqn.png"><br>
+  <img src="../assets/img/tir/rainbow_dqn.png"><br>
   <i>Mức độ training khủng khiếp khi chơi các game Atari
 </i>
 </p>

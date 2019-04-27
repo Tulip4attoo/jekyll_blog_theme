@@ -1,11 +1,11 @@
 ---
-layout: post
-title:  TIL - Làm việc với memory trong RL
-date:   2018-11-16
-mathjax: true
-comments: true
-description: Vấn đề nên xử lý như nào với Memory khi train RL
-img: til/manage_memory.png
+layout:         post
+title:          TIL - Làm việc với memory trong RL
+date:           2018-11-16
+mathjax:        true
+comments:       true
+description:    Vấn đề nên xử lý như nào với Memory khi train RL
+author:         Tulip
 ---
 
 # Sơ qua về câu chuyện

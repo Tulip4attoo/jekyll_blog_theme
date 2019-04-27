@@ -1,11 +1,12 @@
 ---
-layout: post
-title:  Review 10 tháng đầu 2018
-date:   2018-10-24
-mathjax: true
-comments: true
-description: Tổng kết cho 10 tháng của 2018, cũng như là bài mở đầu cho các review hàng tháng của mình
-img: review/cli-team.jpg
+layout:             post
+title:              Review 10 tháng đầu 2018
+date:               2018-10-24
+mathjax:            true
+comments:           true
+description:        Tổng kết cho 10 tháng của 2018, cũng như là bài mở đầu cho các review hàng tháng của mình
+img:                assets/img/review/cli-team.jpg
+author:             Tulip
 ---
 
 # Review 10 tháng đầu 2018
@@ -22,7 +23,7 @@ Hiện tại mình vào FSS.CLI của Fsoft, và team ổn hơn mình kỳ vọn
 
 
 <p align="center">
-  <img src="https://tulip4attoo.github.io/assets/img/review/cli-team.jpg"><br>
+  <img src="../assets/img/review/cli-team.jpg"><br>
   <i>Team mình nè, hãy đoán coi mình là aiiiii</i>
 </p>
 

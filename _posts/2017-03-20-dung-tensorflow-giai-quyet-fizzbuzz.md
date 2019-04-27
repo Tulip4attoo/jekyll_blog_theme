@@ -1,11 +1,12 @@
 ---
-layout: post
-title:  Giải quyết bài toán FizzBuzz bằng Machine Learning sử dụng TensorFlow
-date:   2017-03-20
-mathjax: true
-comments: true
-img: fizzbuzz-tf/rust-fizzbuzz.png
-description: "FizzBuzz là bài toán đơn giản nhưng rất nổi tiếng, dùng để kiểm tra xem 1 lập trình viên có thực sự biết code hay không. Có nhiều lời giải và góc nhìn về bài toán này. Bạn đã từng nghĩ tới việc giải quyết FizzBuzz bằng Machien Leaning chưa? Bài viết này tôi sẽ sử dụng 1 framework Machine Learning là TensorFlow để xử lý bài toán FizzBuzz."
+layout:             post
+title:              Giải quyết bài toán FizzBuzz bằng Machine Learning sử dụng TensorFlow
+date:               2017-03-20
+mathjax:            true
+comments:           true
+img:                assets/img/fizzbuzz-tf/rust-fizzbuzz.png
+description:        FizzBuzz là bài toán đơn giản nhưng rất nổi tiếng, dùng để kiểm tra xem 1 lập trình viên có thực sự biết code hay không. Có nhiều lời giải và góc nhìn về bài toán này. Bạn đã từng nghĩ tới việc giải quyết FizzBuzz bằng Machien Leaning chưa? Bài viết này tôi sẽ sử dụng 1 framework Machine Learning là TensorFlow để xử lý bài toán FizzBuzz.
+author:             Tulip
 ---
 
 # Bài toán FizzBuzz
@@ -16,7 +17,7 @@ FizzBuzz vốn là bài toán vui ở Anh để dạy cho cho trẻ con làm que
 > Viết một chương trình để in ra các số từ 1 đến 100. Nhưng đối với các số là bội của 3 thì in ra chữ “Fizz” thay vì hiển thị số đó và đối với các số là bội của 5 thì in ra chữ “Buzz”. Đối với các số vừa là bội của 3 và 5 thì in ra chữ “FizzBuzz”.
 
 <p align="center">
-  <img src="/assets/img/fizzbuzz-tf/rust-fizzbuzz.png"><br>
+  <img src="../assets/img/fizzbuzz-tf/rust-fizzbuzz.png"><br>
   <i>Minh hoạ bài toán FizzBuzz (nguồn ảnh: chrismorgan.info)</i>
 </p>
 

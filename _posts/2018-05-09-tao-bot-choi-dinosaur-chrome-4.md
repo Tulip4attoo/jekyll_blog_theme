@@ -5,22 +5,23 @@ date:           2018-05-09
 mathjax:        true
 comments:       true
 description:    Đây là bài thứ 4 và cũng là bài cuối trong series tạo bot chơi game T-Rex của Chrome. Trong bài viết này, mình sẽ nói về việc implement Genetic Algorithm (GA) và áp dụng training. Ngoài ra thì mình cũng nói thêm 1 số kinh nghiệm khi tiến hành training cũng như khi code project này.
-img:            chrome-trex/GA_crossover.png
+img:            assets/img/chrome-trex/GA_crossover.png
+author:         Tulip
 ---
 
-Yeah, cuối cùng đã tới bài cuối này rồi :'( Các bạn có thể đọc các bài còn lại trong series ở đây:
+Yeah, cuối cùng đã tới bài cuối này rồi :'( Các bạn có thể đọc các bài còn lại trong series ở đây:
 
-+ Phần 1: https://kipalog.com/posts/Tao-bot-choi-T-Rex-trong-Chrome--phan-1----Hardcode-version
++ [Part 1](../tao-bot-choi-dinosaur-chrome-1/)
 
-+ Phần 2: https://kipalog.com/posts/Tao-bot-choi-T-Rex-trong-Chrome--phan-2----Gioi-thieu-ve-Genetic-Algorithms
++ [Part 2](../tao-bot-choi-dinosaur-chrome-2/)
 
-+ Phần 3: https://kipalog.com/posts/Tao-bot-choi-T-Rex-trong-Chrome--phan-3----Setup-moi-truong-training
++ [Part 3](../tao-bot-choi-dinosaur-chrome-3/)
 
-+ Phần 4: (phần cuối) https://kipalog.com/posts/Tao-bot-choi-T-Rex-trong-Chrome--phan-4----Training-voi-Genetic-Algorithm
++ [Part 4](../tao-bot-choi-dinosaur-chrome-4/)
 
 # Áp dụng GA trong Neural network và bài toán này
 
-Như đã nói ở [phần 2](https://kipalog.com/posts/Tao-bot-choi-T-Rex-trong-Chrome--phan-2----Gioi-thieu-ve-Genetic-Algorithms), GA không có quy định chặt chẽ về cách áp dụng. Đối với việc áp dụng GA vào bài toán này, ta cần phải quy định những điều sau:
+Như đã nói ở [phần 2](../tao-bot-choi-dinosaur-chrome-2/), GA không có quy định chặt chẽ về cách áp dụng. Đối với việc áp dụng GA vào bài toán này, ta cần phải quy định những điều sau:
 
 + Lựa chọn `encoding, mutation`(đột biến): mình chọn cách chuyển các layer (`weights, bias` của các matrix giữa các lớp) thành 1 `sequence` và coi `sequence` này là `chromosome` (bạn có thể hiểu là DNA). Về phần `mutation`, với mỗi số trong `sequence`, mình sẽ có 1 xác suất nhỏ số đấy sẽ được cộng với 1 số random nào đó (khá nhỏ so với số này).
 
@@ -31,7 +32,7 @@ Như đã nói ở [phần 2](https://kipalog.com/posts/Tao-bot-choi-T-Rex-trong
 + Lựa chọn cách crossover: mình chọn cách cắt đôi `sequence` để thực hiện `crossover`. Do ghép từ 2 cặp cắt đôi (là có cắt `weights` và `bias`) nên sẽ có 4 kết quả. Mình chọn random trong 4 kết quả này. Bạn có thể hình dung thông qua minh hoạ dưới đây. Do chỉ có 4 cha mẹ cho 1 `generation` mới, mình lựa chọn 1 cá thể có thể nhân giống với chính nó.
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/chrome-trex/GA_crossover.png"><br>
+  <img src="../assets/img/chrome-trex/GA_crossover.png"><br>
   <i>Minh hoạ về cách crossover 1 sequence [Nguồn: https://becominghuman.ai/)
 </i>
 </p>
@@ -294,7 +295,7 @@ clever_params = {'b2': np.array([[ 0.27304736]]),
 
 # Những điều rút ra từ project này
 
-+ phần engineering rất mệt. Thậm chí tới giờ thi thoảng vẫn có bug đếm lỗi số cây sương rồng :'( mà mình vẫn chưa debug hết (tuy nhiên cũng hiếm hehe)
++ phần engineering rất mệt. Thậm chí tới giờ thi thoảng vẫn có bug đếm lỗi số cây sương rồng :'( mà mình vẫn chưa debug hết (tuy nhiên cũng hiếm hehe)
 
 + tính trade-off trong các model rất lớn.
 

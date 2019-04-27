@@ -5,7 +5,8 @@ date:           2018-05-08
 mathjax:        true
 comments:       true
 description:    Bài viết thứ 3 trong series tạo bot chơi game T-Rex của Chrome. Trong bài viết này, mình sẽ nói về việc setup môi trường để training thuật toán. Môi trường bao gồm 1 model Neural network với 1 hidden layer, xác định state hiện tại của game (tốc độ, vị trí xương rồng, etc.), việc chuyển Neural network thành bot.
-img:            chrome-trex/NN_model.png
+img:            assets/img/chrome-trex/NN_model.png
+author:         Tulip
 ---
 
 Bài viết thứ 3 trong series tạo bot chơi game T-Rex của Chrome. Trong bài viết này, mình sẽ nói về việc setup môi trường để training thuật toán. Môi trường bao gồm 1 model Neural network với 1 hidden layer, xác định state hiện tại của game (tốc độ, vị trí xương rồng, etc.), việc chuyển Neural network thành bot.
@@ -33,7 +34,7 @@ Cá nhân tôi cho rằng có thể giải quyết bài toán với nhiều mode
 Ok. Vậy chúng ta sẽ lựa chọn các hyper-param như nào cho Neural network của mình? Tôi lựa chọn size 3-3-1 (1 Hidden layer với 3 nodes), lý do bởi vì tôi nghĩ 1 cấu trúc đơn giản như vậy cũng có thể giải quyết bài toán. Output của Neural network sẽ là 1 giá trị `action_value`, nếu `action_value` lớn hơn 1 `threshold` nào đó thì sẽ quyết định sẽ nhảy, còn lại thì không.
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/chrome-trex/NN_model.png"><br>
+  <img src="../assets/img/chrome-trex/NN_model.png"><br>
   <i>Model để chơi</i>
 </p>
 
@@ -192,7 +193,7 @@ LANDSCAPE = False
 Để lấy được state hiện tại của game như: `speed, size, distance`, chúng ta cần phân tích hình ảnh màn hình game. Để có thể phù hợp với nhiều máy, thay vì hardcode như bài trước, ta sẽ tạo ra 1 hàm `find_game_position` để xác định vị trí của game. Việc thực hiện là matching màn hình với 1 template có sẵn và xác định phần matched.
 
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/chrome-trex/dino_landscape.png"><br>
+  <img src="../assets/img/chrome-trex/dino_landscape.png"><br>
   <i>Template để xác định diện tích màn chơi</i>
 </p>
 

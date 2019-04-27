@@ -1,11 +1,12 @@
 ---
-layout: post
-title:  TIL - Cài đặt environment trên máy ảo Debian của Google cloud
-date:   2018-10-26
-mathjax: true
-comments: true
-description: Cài đặt environment trên máy ảo Debian của Google cloud
-img: short-post-images/nvidia-pain.png
+layout:             post
+title:              TIL - Cài đặt environment trên máy ảo Debian của Google cloud
+date:               2018-10-26
+mathjax:            true
+comments:           true
+description:        Cài đặt environment trên máy ảo Debian của Google cloud
+img:                assets/img/short-post-images/nvidia-pain.png
+author:             Tulip
 ---
 
 # Sơ qua về câu chuyện

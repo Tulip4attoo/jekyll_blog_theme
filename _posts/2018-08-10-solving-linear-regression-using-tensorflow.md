@@ -5,12 +5,13 @@ date:           2018-08-10
 mathjax:        true
 comments:       true
 description:    TensorFlow là một framework về machine learning, đặc biệt chuyên về Deep learning của Google. Bài viết này nhằm mục đích làm quen với một vài khái niệm, cũng như flow khi dùng TensorFlow giải quyết các bài toán, mà cụ thể ở đây là bài toán Linear regression.
-img:            make-gif/linear_regression_fitting.gif
+img:            assets/img/make-gif/linear_regression_fitting.gif
+author:         Tulip
 ---
 
-TensorFlow là một framework về machine learning, đặc biệt chuyên về Deep learning của Google. Nếu chưa biết về TensorFlow, bạn có thể coi giới thiệu về TensorFlow mà mình từng viết 2 năm trước [ở đây](https://tulip4attoo.github.io/blog/dung-tensorflow-giai-quyet-fizzbuzz/).
+TensorFlow là một framework về machine learning, đặc biệt chuyên về Deep learning của Google. Nếu chưa biết về TensorFlow, bạn có thể coi giới thiệu về TensorFlow mà mình từng viết 2 năm trước [ở đây](../dung-tensorflow-giai-quyet-fizzbuzz/).
 
-# Flow khi sử dụng TensorFlow
+# Flow khi sử dụng TensorFlow
 
 Khi sử dụng TensorFlow để giải quyết các bài toán machine learning, mình sẽ thực hiện theo flow như sau:
 
@@ -73,10 +74,10 @@ with tf.Session() as sess:
 
 Và đây là kết quả của chúng ta:
 <p align="center">
-  <img src="https://Tulip4attoo.github.io/assets/img/make-gif/linear_regression_fitting.gif"><br>
+  <img src="../assets/img/make-gif/linear_regression_fitting.gif"><br>
   <i>Sử dụng gradient để fit linear regression</i>
 </p>
 
 # Kết luận
 
-Chúng ta đã hoàn thành code xong thuật toán linear regression sử dụng TensorFlow. Đây là thuật toán đơn giản, dễ code, đặc biệt là khi dùng "dao mổ trâu" như TensorFlow. Nếu bạn muốn làm quen TensorFlow, đây là bài toán ban đầu phù hợp, trước khi chuyển tới những bài toán khác, ví dụ như [dùng Neural network giải quyết bài toán fizzbuzz](https://tulip4attoo.github.io/blog/dung-tensorflow-giai-quyet-fizzbuzz/). Dự định tiếp theo của mình sẽ là dùng TensorFlow để thực hiện implement [word2vec](https://www.tensorflow.org/tutorials/representation/word2vec).
+Chúng ta đã hoàn thành code xong thuật toán linear regression sử dụng TensorFlow. Đây là thuật toán đơn giản, dễ code, đặc biệt là khi dùng "dao mổ trâu" như TensorFlow. Nếu bạn muốn làm quen TensorFlow, đây là bài toán ban đầu phù hợp, trước khi chuyển tới những bài toán khác, ví dụ như [dùng Neural network giải quyết bài toán fizzbuzz](../dung-tensorflow-giai-quyet-fizzbuzz/). Dự định tiếp theo của mình sẽ là dùng TensorFlow để thực hiện implement [word2vec](https://www.tensorflow.org/tutorials/representation/word2vec).

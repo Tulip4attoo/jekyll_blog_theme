@@ -5,7 +5,7 @@ date:           2018-12-12
 mathjax:        true
 comments:       true
 description:    Tóm tắt lại bài Steve Jobs and the Founder’s Pain (http://www.aaronsw.com/weblog/stevepain)
-img:            tir/steve_pain.jpeg
+author:         Tulip
 ---
 
 Bài này mình đọc lâu rồi, nhưng mỗi ngày trôi qua lại thấy thấm thía thêm 1 phần. Vì vậy, mình sẽ review qua lại đây.

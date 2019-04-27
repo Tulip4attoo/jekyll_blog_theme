@@ -1,16 +1,16 @@
 ---
-layout: post
-title:  Lọt vào top 10 cuộc thi hackathon 3.0 của Analytics Vidhya
-date:   2015-09-20
-mathjax: true
-comments: true
-description: Lần đầu tham gia 1 cuộc thi hackathon online, khi mới tập code được tầm 2 tháng. Thành tích 7 / 273 thí sinh tham dự là 1 kết quả quan trọng với tôi.
-img: hackathon/result.jpg
+layout:                     post
+title:                      Lọt vào top 10 cuộc thi hackathon 3.0 của Analytics Vidhya
+date:                       2015-09-20
+mathjax:                    true
+comments:                   true
+description:                Lần đầu tham gia 1 cuộc thi hackathon online, khi mới tập code được tầm 2 tháng. Thành tích 7 / 273 thí sinh tham dự là 1 kết quả quan trọng với tôi.
+img:                        assets/img/hackathon/result.jpg
 ---
 
 Analytics Vidhya là 1 trang chuyên về phân tích dữ liệu (data analytics) của Ấn Độ. Lĩnh vực phân tích dữ liệu là 1 lĩnh vực mới, tuy nhiên đang được đón nhận tích cực tại Mỹ, Ấn Độ và nhiều quốc gia khác trên thế giới. Từ tháng 6 trở lại đây, Analytics Vidhya đều đặn tổ chức các cuộc thi data hackathon hàng tháng, thu hút 1 số lượng không nhỏ các ứng viên. Tháng 8 - 2015, tôi có tham gia và đạt hạng 7 chung cuộc trên tổng số 273 thí sinh tham dự cuộc thi [Online Hackathon - Find the next Brain Wong!](http://discuss.analyticsvidhya.com/t/online-hackathon-3-0-find-the-next-brain-wong/2838). Bài viết này nói về cách tiếp cận và giải quyết vấn đề trong cuộc thi đấy của tôi.
 
-![Result]({{ tulip4attoo.github.io }}/assets/img/hackathon/result.jpg)
+![Result](../assets/img/hackathon/result.jpg)
 
 
 ## 1, Giới thiệu yêu cầu
@@ -19,7 +19,7 @@ Yêu cầu của cuộc thi lần này là tính toán ra giá trị đầu tư 
 
 Các biến được sử dụng ở training set và test set như sau:
 
-![variables-list]({{ tulip4attoo.github.io }}/assets/img/hackathon/variables.jpg)
+![variables-list](../assets/img/hackathon/variables.jpg)
 
 Cuộc thi có kiểm tra đáp án với 30% test set, và lần đánh giá cuối cùng là đáh giá 100% test set. Phương pháp đo lường sai số được sử dụng là [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation).
 
@@ -45,7 +45,7 @@ boxplot(training_set$Project_Valuation ~ training_set$Var8, outline=F, col = c("
 "royalblue2"))
 ```
 
-![boxplot-no-outlier]({{ tulip4attoo.github.io }}/assets/img/hackathon/boxplot-no-outlier.jpg)
+![boxplot-no-outlier](../assets/img/hackathon/boxplot-no-outlier.jpg)
 
 Khi cho phép hiển thị các outliers, bạn có thể nhận thấy rõ ràng hơn:
 
@@ -55,7 +55,7 @@ boxplot(training_set$Project_Valuation ~ training_set$Var8, outline=T, col = c("
 "royalblue2"))
 ```
 
-![boxplot-outliers]({{ tulip4attoo.github.io }}/assets/img/hackathon/boxplot-outliers.jpg)
+![boxplot-outliers](../assets/img/hackathon/boxplot-outliers.jpg)
 
 Như vậy, bạn có thể tạo ra 1 biến mới chỉ bao gồm 4 loại khu vực sau khi đã phân loại.
 
@@ -79,7 +79,7 @@ Khi đã có 2 biến mới *geo* và *Var8* (được chỉnh sửa), tôi quy�
 
 Ban đầu, tôi chạy thử với mô hình glm, kết quả đạt được đủ để tôi lọt vào top 20, nhưng vẫn chưa đủ tốt. Sau khi có 1 số điều chỉnh, tôi quyết định chuyển sang mô hình random forest. Khi chạy mô hình **random forest** với ntree = 300 và nodesize thay đổi từ 20 tới 100, tôi thấy mô hình hoạt động tốt khi nodesize dao động ở giá trị 70. Tôi cố gắng kết hợp 2 mô hình lại nwhng không thu được kết quả như ý, vì vậy kết quả cuối cùng chỉ bao gồm mô hình random forest.
 
-Code cuối cùng được tôi gửi cho cuộc thi bạn có thể theo dõi ở [đây]() (lưu ý: code này không bao gồm các phép thử nodesize, thực hiện boxplot, thử nghiệm mô hình glm, chia training set để tự kiểm tra trong traning set,...)
+2019 Update:Code này mình up lên github nhưng hồi đó ngu dại, up kiểu gì mà không có code =)) thôi coi nó đi vào dĩ vãng vậy. Bài này mình viết gần 4 năm rồi, hồi đó vừa học nên cũng chưa biết gì, giờ đọc lại cũng thấy hơi buồn cười nhưng cũng là tâm huyết 1 thời của mình, nên dẫu ngây ngô chút nhưng cũng rất đáng quý hehe.
 
 ## 3, Kết luận
 
