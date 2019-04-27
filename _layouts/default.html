@@ -9,7 +9,7 @@
 <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
 
-<script type="text/javascript" src="/assets/js/main.js" charset="UTF-8"></script>
+<!-- <script type="text/javascript" src="/assets/js/main.js" charset="UTF-8"></script> -->
 <style>
 img {
   width: 100%;
@@ -49,8 +49,8 @@ img {
 
 #post-title {
   color: #009900;
-  text-align: center;
-  font-size: 40px; 
+  text-align: left;
+  font-size: 50px; 
   font-family: "Alegreya", serif;
 }
 
@@ -64,7 +64,7 @@ img {
     height: 5rem;
     overflow: hidden;
     position: relative;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: "Alegreya", serif;
     font-weight: 800;
     font-size: .9em;
     text-transform: uppercase;
@@ -91,7 +91,7 @@ img {
       line-height: 1.4; }
     .postNav .prev.image, .postNav .next.image {
       text-decoration: none;
-      color: white;
+      color: #ffffff;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
       padding: 0 .5rem;
       position: relative;
@@ -102,6 +102,15 @@ img {
     left: 0; }
   .postNav .next span {
     right: 0; }
+
+  .postNav .prev, .postNav .next {
+    width: 50%; }
+  .postNav .prev {
+    float: left;
+    text-align: left; }
+  .postNav .next {
+    text-align: right;
+    float: right; }
 
 .clearfix {
   zoom: 1; }
@@ -185,7 +194,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 <footer class="w3-container w3-black w3-padding-32 w3-margin-top">
-  <p align="right" style="position: relative; right:50px;">Tuliptattoo's theme, inspred from a <a href="https://www.w3schools.com/w3css/tryw3css_templates_blog.htm">W3S theme</a></p>
+  <p align="right" style="position: relative; right:50px;">&copy; {{ site.time | date: '%Y' }} <a href="https://tulip4attoo.github.io/">Tulip4attoo</a>. Powered by <a href="http://jekyllrb.com">Jekyll</a></p>
 </footer>
   
 </body>

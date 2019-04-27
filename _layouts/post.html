@@ -13,38 +13,27 @@ post_class: post-template
 		<div class="col-md-9 flex-first flex-md-unordered" style="margin-left:30px; margin-right:30px; text-align:justify;">
 			<div class="mainheading">
 
-                <!-- Author Box -->
-<!--  {% if page.author %}				
-				<div class="row post-top-meta">
-					<div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
-						<img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-					</div>
-					<div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-						<a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-						<span class="author-description">{{ author.description }}</span>						
-					</div>
-				</div>				
-      {% endif %}
- -->                
-                <!-- Post Title -->
-				<h1 id="post-title"><b>{{ page.title }}</b></h1> 
-                
-			</div>
-
-
-			<!-- Post Featured Image -->
+            <!-- Post Featured Image -->
             {% if page.img %}
-
-            {% if site.lazyimages == "enabled" %}
-            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.img contains "://" %}{{ page.img }}{% else %}{{ page.img | absolute_url }}{% endif %}" alt="{{ page.title }}">
-            {% else %}
-            <img class="featured-image img-fluid" src="{% if page.img contains "://" %}{{ page.img }}{% else %}{{ page.img | absolute_url }}{% endif %}" alt="{{ page.title }}">
-            {% endif %}
-
+            <img src="{% if page.img contains "://" %}{{ page.img }}{% else %}{{ page.img | absolute_url }}{% endif %}" style="width:100%"> 
             {% endif %}
             <!-- End Featured Image -->
+                <br><br>
+                <!-- Post Title -->
+                <h1 id="post-title"><b>{{ page.title }}</b></h1> 
             
-            
+                <span><br><i>Posted on {{ page.date | date_to_string }} </i>
+                    {% if page.author %}
+                    <span class="meta-footer-thumb"><i>
+                        <span class="author-meta">
+                        <span class="post-name"><a target="_blank" href="{{ author.web }}"></a>by {{ author.display_name }}</span></span>
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}" style="width:30px">
+                    </span>                
+                    </i>
+                    {% endif %}
+                </span>
+                <div style="width:200px; border-bottom: 2px solid; border-bottom-color: #009900; padding-bottom: 10px;"></div>
+            </div>
 
 			<!-- Post Content -->
 			<div class="article-pos" id="text">
@@ -61,75 +50,29 @@ post_class: post-template
                 <!-- End Toc -->
 				{{content}}
 			</div>
-                        
-            <!-- Post Date -->
-            <p>
-            <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-                {% if page.last_modified_at %}
-                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+
+            <!-- POST NAVIGATION -->
+            <br>
+            <div class="postNav clearfix">
+                {% if page.previous.url %} 
+                <a class="prev{% if page.previous.img %} image{% endif %}" href="{{ page.previous.url | prepend: site.baseurl }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
+                {% if page.previous.img %} 
+                    <img src="../{{ page.previous.img }}" alt="">
                 {% endif %}
-                </small>
-            </p>
-            
-			<!-- Post Categories -->
-			<div class="after-post-cats">
-				<ul class="tags mb-4">
-                    {% assign sortedCategories = page.categories | sort %}
-                    {% for category in sortedCategories %}
-                    <li>                        
-                     <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
-                    </li>
-                    {% endfor %}
-				</ul>
-			</div>
-            <!-- End Categories -->
-            
-            <!-- Post Tags -->
-			<div class="after-post-tags">
-				<ul class="tags">
-                    {% assign sortedTags = page.tags | sort %}
-                    {% for tag in sortedTags %}
-                    <li>                        
-                     <a class="smoothscroll" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
-                    </li>
-                    {% endfor %}
-				</ul>
-			</div>
-			<!-- End Tags -->
-            
-            <!-- Prev/Next -->
-<!--             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-            {% if page.previous.url %}
-            <a class="prev d-block col-md-6" href="{{page.previous.url | absolute_url}}"> &laquo; {{page.previous.title}}</a>
-            {% endif %}
-            {% if page.next.url %}
-            <a class="next d-block col-md-6 text-lg-right" href="{{page.next.url | absolute_url}}">{{page.next.title}} &raquo; </a>
-            {% endif %}
-            <div class="clearfix"></div>
+                </a>
+                {% endif %}  
+                {% if page.next.url %}  
+                <a class="next{% if page.next.img %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
+                {% if page.next.img %} 
+                    <img src="../{{ page.next.img }}" alt="">
+                {% endif %} 
+                </a>
+                {% endif %} 
             </div>
- -->            <!-- End Categories -->
-
-      <!-- POST NAVIGATION -->
-      <div class="postNav clearfix">
-        {% if page.previous.url %} 
-          <a class="prev{% if page.previous.img %} image{% endif %}" href="{{ page.previous.url | prepend: site.baseurl }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
-          {% if page.previous.img %} 
-            <img src="{{ '../assets/img/' | prepend: site.baseurl | append: page.previous.img }}" alt="">
-          {% endif %}
-        </a>
-        {% endif %}  
-        {% if page.next.url %}  
-          <a class="next{% if page.next.img %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
-          {% if page.next.img %} 
-            <img src="../{{ page.next.img }}" alt="">
-          {% endif %} 
-          </a>
-        {% endif %} 
-      </div>
+            <br><br>
 
 
-            <div id="disqus_thread"></div>
+            <!-- <div id="disqus_thread"></div>
             <script>
                 /**
                  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -150,7 +93,7 @@ post_class: post-template
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 		</div>
 		<!-- End Post -->
 	</div>
