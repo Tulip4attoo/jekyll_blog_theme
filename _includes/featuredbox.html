@@ -4,7 +4,7 @@
     <a href="{{ post.url | absolute_url }}" style="text-decoration:none;">
         <img class="w3-left w3-margin-right" style="width:50px;height:50px;" 
             src="{% if post.img contains "://" %}{{ post.img_feature }}{% else %}{{ post.img_feature | absolute_url }}{% endif %}">
-        <span class="w3-large" id="text-header-small"><b>{{ post.title }}</b></span><br>
+        <span class="w3-large" id="text-header-small"><b>{{ post.title | strip_html | truncatewords:6}}</b></span><br>
         <div id="text">
         	{% for category in post.categories %}
         	<span class="w3-tag w3-black">{{ category }}</span>
